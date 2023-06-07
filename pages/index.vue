@@ -28,7 +28,6 @@
 <script>
 import Card from '~/components/Card'
 import CustomClock from '~/components/CustomClock'
-import VueGeolocationApi from 'vue-geolocation-api'
 
 
 export default {
@@ -36,7 +35,6 @@ export default {
   components: {
     Card,
     CustomClock,
-    VueGeolocationApi
   },
   data() {
     return {
@@ -50,11 +48,6 @@ export default {
     }
   },
   methods: {
-    inRange() {
-      const coords = this.$geolocation.coords
-      if (!coords) return '?'
-      return distanceFrom(coords, this.destination) > 150
-    },
     updateTime() {
       var cd = new Date();
       this.time = this.zeroPadding(cd.getHours(), 2) + ':' + this.zeroPadding(cd.getMinutes(), 2) + ':' + this.zeroPadding(cd.getSeconds(), 2);
@@ -112,8 +105,6 @@ export default {
 
     this.updateWeather()
     this.updateTime();
-
-    this.inRange()
 
   }
 }

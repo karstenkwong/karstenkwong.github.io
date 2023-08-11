@@ -12,6 +12,7 @@ export default {
       weather: undefined,
       klcWeather: undefined,
       fnd: undefined,
+      ran: Math.floor( Math.random() * 10 ),
     }
   },
   methods: {
@@ -66,6 +67,7 @@ export default {
 
     setInterval(async () => {
       this.updateWeather()
+      this.ran = Math.floor( Math.random() * 10 );
     }, 1000 * 60);
 
 
@@ -80,9 +82,37 @@ export default {
 </script>
 
 <template>
-  <video autoplay muted loop playsinline id="myVideo">
-    <source src="../assets/wallpaper.mp4" type="video/mp4">
+  <video v-if="ran == 0" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper0.mp4" type="video/mp4">
   </video>
+  <video v-if="ran == 1" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper1.mp4" type="video/mp4">
+  </video>
+  <video v-if="ran == 2" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper2.mp4" type="video/mp4">
+  </video>
+  <video v-if="ran == 3" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper3.mp4" type="video/mp4">
+  </video>
+  <video v-if="ran == 4" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper4.mp4" type="video/mp4">
+  </video>
+  <video v-if="ran == 5" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper5.mp4" type="video/mp4">
+  </video>
+  <video v-if="ran == 6" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper6.mp4" type="video/mp4">
+  </video>
+  <video v-if="ran == 7" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper7.mp4" type="video/mp4">
+  </video>
+  <video v-if="ran == 8" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper8.mp4" type="video/mp4">
+  </video>
+  <video v-if="ran == 9" autoplay muted loop playsinline id="myVideo">
+    <source src="../assets/wallpaper9.mp4" type="video/mp4">
+  </video>
+
   <section class="section">
     <div id="clock">
       <p class="date" :key="updateKey + 1">{{ date }}</p>
@@ -165,7 +195,7 @@ p {
 }
 
 #clock {
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, .2);
   font-family: 'Share Tech Mono', monospace;
   color: #ffffff;
   text-align: center;

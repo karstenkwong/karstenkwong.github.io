@@ -80,7 +80,7 @@ export default {
 </script>
 
 <template>
-  <video autoplay muted loop id="myVideo">
+  <video autoplay muted loop playsinline id="myVideo">
     <source src="../assets/wallpaper.mp4" type="video/mp4">
   </video>
   <section class="section">
